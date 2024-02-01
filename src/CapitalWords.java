@@ -3,23 +3,19 @@ public class CapitalWords
     public static void main(String[] args)
     {
         String s = "This is a nEw String";
-        //Caps=3
-        Character previousLetter = ' ';
         int caps=0;
 
-        for(int i=0;i<s.length();i++)
-        {
-            if(previousLetter==' ')
+        String[] words = s.split(" ");
+        //[This,is,a,nEw,String]
+
+        for(int i=0;i<words.length;i++) {
+            String word = words[i];
+            //String
+            if(Character.isUpperCase(word.charAt(0))) // S
             {
-                if(Character.isUpperCase(s.charAt(i)))
-                {
-                    caps++;
-                }
+                caps++;
             }
-            previousLetter = s.charAt(i);
         }
-
-        System.out.println("Caps in string: "+caps);
-
+        System.out.println("Caps: "+caps);
     }
 }

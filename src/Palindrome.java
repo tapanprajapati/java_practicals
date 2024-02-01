@@ -6,25 +6,20 @@ public class Palindrome
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter String: ");
-        String s=sc.nextLine();
+        String str = sc.nextLine();
 
-        boolean isPalindrome = true;
+        StringBuffer sb = new StringBuffer(str);
+        String reverse = sb.reverse().toString();
+        System.out.println("Reverser of " + str +": " + reverse);
 
-        for(int i=0;i<s.length()/2;i++)
+        if(str.equalsIgnoreCase(reverse))
         {
-            if(s.charAt(i)!=s.charAt(s.length()-1-i))
-            {
-                isPalindrome=false;
-            }
-        }
-
-        if(isPalindrome)
-        {
-            System.out.println("String is palindrome");
+            System.out.println("String is Palindrome");
         }
         else
         {
-            System.out.println("String is not palindrome");
+            System.out.println("String is not Palindrome");
         }
+
     }
 }
